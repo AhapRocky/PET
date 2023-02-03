@@ -1,0 +1,514 @@
+// Fonts
+@import "fonts";
+// Variables
+$mainColor: #004d90;
+$white: #ffffff;
+$textColor: #000000;
+$btnColor: #18a0fb;
+$bgColor: #f5f5f5;
+// Main
+html {
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+  color: $textColor;
+  &._lock {
+    overflow: hidden;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex: 0 0 auto;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 52px;
+  color: $mainColor;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  color: $textColor;
+}
+
+.text {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.block-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+// Header
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: $white;
+  z-index: 100;
+  box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.2);
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px 0;
+}
+.header__logo {
+}
+.logo {
+  img {
+    max-width: 100%;
+    width: 130px;
+  }
+}
+.menu {
+}
+.menu__list {
+}
+.menu__list-item {
+  position: relative;
+}
+.menu__list-item--active {
+}
+.menu__list-link {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  color: $mainColor;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: $btnColor;
+  }
+}
+.menu__sub-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: $white;
+  // padding: 15px;
+  min-width: 200px;
+  box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.15);
+}
+.menu__sub-item {
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: $mainColor;
+    .menu__sub-link {
+      color: $white;
+    }
+  }
+}
+
+.menu__sub-link {
+  display: flex;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  color: $mainColor;
+  transition: color 0.2s ease-in-out;
+  padding: 10px;
+}
+
+.header__btns {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+}
+.header__contact {
+  svg {
+    path {
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  &:hover {
+    svg {
+      path {
+        fill: $btnColor;
+      }
+    }
+  }
+}
+.header__language {
+  svg {
+    path {
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  &:hover {
+    svg {
+      path {
+        fill: $btnColor;
+      }
+    }
+  }
+}
+
+@media (min-width: 767px) {
+  .menu__list {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+  .menu__list-item {
+    padding: 10px 0;
+    &:hover {
+      .menu__sub-list {
+        transform: translate(0px, 0px);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+      }
+    }
+  }
+  .menu__sub-list {
+    transform: translate(0px, 10px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+// Top
+.top {
+  position: relative;
+  height: 88vh;
+  margin-top: 120px;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/top.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+// About
+.about {
+  background-color: $bgColor;
+  padding: 60px 0;
+}
+.about__title {
+  // margin: 0;
+}
+.about__text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 40px;
+  color: $textColor;
+}
+
+// Advantages
+.advantages {
+  padding: 60px 0;
+}
+.advantages__title {
+}
+.advantages__inner {
+}
+.advantages__img {
+  img {
+    max-width: 100%;
+  }
+}
+.advantages__info {
+  max-width: 596px;
+}
+.info-advantages {
+}
+.info-advantages__title {
+  margin-bottom: 25px;
+}
+.info-advantages__text {
+}
+
+// Directions
+.directions {
+  background-color: $bgColor;
+  padding: 60px 0;
+}
+.directions__title {
+}
+.directions__inner {
+}
+.info-directions {
+  max-width: 596px;
+}
+.info-directions__title {
+}
+.info-directions__text {
+}
+.directions__img {
+  img {
+    max-width: 100%;
+  }
+}
+
+// Certificates
+.certificates {
+  padding: 60px 0;
+}
+.certificates__inner {
+}
+.certificates__info {
+}
+.info-certificates {
+}
+.info-certificates__title {
+}
+.info-certificates__subtitle {
+  font-family: "Montserrat";
+  font-size: 36px;
+  line-height: 50px;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  margin-bottom: 80px;
+}
+.certificates__gallery {
+}
+.gallery-certificates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 173px);
+  column-gap: 84px;
+  row-gap: 64px;
+  justify-content: center;
+}
+.gallery-certificates__item {
+}
+
+// Start
+.start {
+  background-color: $bgColor;
+}
+.start__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 60px 0;
+}
+.start__info {
+}
+.info-start {
+  max-width: 100%;
+  width: 600px;
+}
+.info-start__title {
+}
+.info-start__text {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 35px;
+  color: rgba(0, 0, 0, 0.8);
+}
+.info-start__btns {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 40px;
+}
+.info-start__btn {
+  padding: 12px 40px;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 21px;
+  border-radius: 6px;
+  color: $white;
+  display: inline-block;
+  background-color: $btnColor;
+  border: 2px solid $btnColor;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: $btnColor;
+    background-color: $white;
+  }
+}
+// Contacts
+.contacts {
+  padding: 60px 0;
+}
+.contacts__title {
+}
+.contacts__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 99%;
+    background-color: $mainColor;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -45%);
+  }
+}
+.contacts__info {
+}
+.info-contacts {
+}
+.info-contacts__title {
+  margin-bottom: 20px;
+}
+.info-contacts__list {
+  max-width: 400px;
+}
+.info-contacts__item {
+  margin-bottom: 20px;
+  &--phone {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 25px;
+      height: 25px;
+      background-image: url("../images/phone.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  &--mail {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 25px;
+      height: 25px;
+      background-image: url("../images/mail.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  &--map {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 25px;
+      height: 25px;
+      background-image: url("../images/map.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+.info-contacts__link {
+  display: inline-block;
+  font-size: 20px;
+  color: $mainColor;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+  padding-left: 40px;
+  position: relative;
+  z-index: 5;
+  &:hover {
+    color: $btnColor;
+  }
+}
+.info-contacts__socials {
+}
+.socials {
+  display: flex;
+  column-gap: 30px;
+}
+.socials__item {
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+.socials__link {
+  svg {
+    path {
+      transition: all 0.2s ease-in-out;
+    }
+  }
+  &:hover {
+    transform: scale(2);
+    svg {
+      path {
+        fill: $mainColor;
+      }
+    }
+  }
+}
+.socials__link--instagram {
+}
+.socials__link--telegram {
+}
+.socials__link--viber {
+}
+.contacts__map {
+}
+.contacts__map-wrapper {
+  iframe {
+  }
+}
